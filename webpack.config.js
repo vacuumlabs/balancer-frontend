@@ -12,6 +12,7 @@ module.exports =
 {
     // This is the "main" file which should include all other modules
     entry: './src/main.ts',
+    node : { "fs": "empty" },
     // Where should the compiled file go?
     output:
     {
