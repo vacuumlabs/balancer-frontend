@@ -17,5 +17,9 @@
         "src/**/*.ts",
         "src/**/*.vue",
         "tests/**/*.ts"
-    ]
+    ],
+    "typeRoots": [
+        "./typings",
+        "./node_modules/@types/"
+      ]
 }

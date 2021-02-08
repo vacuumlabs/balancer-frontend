@@ -16,6 +16,12 @@ import trustwalletLogo from '@/assets/connector/trustwallet.svg';
 import walletconnectLogo from '@/assets/connector/walletconnect.svg';
 import walletlinkLogo from '@/assets/connector/walletlink.svg';
 
+import Web3 from 'web3';
+import { NearProvider, nearWeb3Extensions } from 'near-web3-provider';
+import * as nearlib from 'nearlib';
+import web3Utils from 'web3-utils';
+
+
 import config from '@/config';
 
 const lock = new Lock();
@@ -36,6 +42,7 @@ export function hasInjectedProvider(): boolean {
 }
 
 export function getConnectorName(connectorId: string): string {
+    console.log(JSON.stringify(connectors));
     if (connectorId === 'injected') {
         const provider = window.ethereum;
         if (provider.isMetaMask) {
