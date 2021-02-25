@@ -1,0 +1,16 @@
+{
+    "network": "betanet",
+    "chainId": 1313161556,
+    "precision": 6,
+    "addresses": {
+        "bFactory": "0xE1709acDFaF12dCaa0960dDB56902d71f09B657B",
+        "bActions": "0x43DBAc87A7d98eB2aeF37648F3DD852634641a8f",
+        "dsProxyRegistry": "0x053A91D4210bb775507014308cdE6fdCa19Dfc2B",
+        "exchangeProxy": "0xdB9217dF5c41887593e463CFA20036B62a4E331C",
+        "weth": "0xd0A1E359811322d97991E03f863a0C30C2cF029C",
+        "multicall": "0x3634DEFD99bfe246CF6a89Ba68265D2800C6d801"
+    },
+    "connectors": {
+        "NearConnector": {}
+    }
+}

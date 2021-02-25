@@ -63,5 +63,19 @@ export function getAssetsFromTokenlist(chainId: number, list: TokenList): Record
             logoURI: token.logoURI,
         };
     }
+    assets['0xe599045a0a93ff901b995c755f1599db6acd44e6'] = {
+        address: '0xe599045a0a93ff901b995c755f1599db6acd44e6',
+        name: 'GKC1',
+        symbol: 'GKC1',
+        decimals: 18,
+        logoURI: ETH_LOGO,
+    }
+    assets['0xc1dd4f43e799a08ec72b455c723c7fe0e9e85a70'] = {
+        address: '0xc1dd4f43e799a08ec72b455c723c7fe0e9e85a70',
+        name: 'GKC2',
+        symbol: 'GKC2',
+        decimals: 18,
+        logoURI: ETH_LOGO,
+    }
     return assets;
 }

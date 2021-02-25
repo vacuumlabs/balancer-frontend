@@ -1,5 +1,6 @@
 import homestead from './homestead.json';
 import kovan from './kovan.json';
+import nearBetanet from './nearBetanet.json';
 
 interface Connector {
     id: string;
@@ -44,6 +45,10 @@ const configs = {
     42:{
         untrusted: [],
         ...kovan,
+    },
+    1313161556: {
+        untrusted: [],
+        ...nearBetanet,
     },
 };
 // eslint-disable-next-line no-undef

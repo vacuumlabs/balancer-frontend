@@ -166,6 +166,10 @@ function getPreferences(): Preferences {
                 inputAsset: '0x1528F3FCc26d13F7079325Fb78D9442607781c8C',
                 outputAsset: '0xef13C0c8abcaf5767160018d268f9697aE4f5375',
             },
+            1313161556: {
+                inputAsset: '0xe599045a0a93ff901b995c755f1599db6acd44e6',
+                outputAsset: '0xc1dd4f43e799a08ec72b455c723c7fe0e9e85a70',
+            },
         },
         list: 'balancer',
         darkmode: true,

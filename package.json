@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "@balancer-labs/assets": "github:balancer-labs/assets#master",
-    "@balancer-labs/sor": "^1.0.0-1",
+    "@balancer-labs/sor": "file:balancer-labs-sor-v1.0.0.tgz",
     "@ethersproject/address": "^5.0.6",
     "@ethersproject/constants": "^5.0.6",
     "@ethersproject/contracts": "^5.0.6",
@@ -34,6 +34,7 @@
     "ethcall": "^3.0.0",
     "fortmatic": "^2.0.6",
     "near-api-js": "^0.36.2",
+    "near-web3-provider": "^1.1.0",
     "nearlib": "^0.22.0",
     "vue": "^3.0.2",
     "vue-loader-v16": "npm:vue-loader@16.0.0-beta.7",

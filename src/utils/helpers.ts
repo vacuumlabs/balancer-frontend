@@ -5,7 +5,7 @@ import { Wallet } from '@ethersproject/wallet';
 import assets from '@balancer-labs/assets/assets/index.json';
 
 import config from '@/config';
-import { debugProvider } from '@/utils/provider';
+// import { debugProvider } from '@/utils/provider';
 
 export const ETH_KEY = 'ether';
 
@@ -106,9 +106,9 @@ export function logRevertedTx(
     params: any,
     overrides: any,
 ): void {
-    overrides.gasPrice = sender;
-    const dummyPrivateKey = '0x651bd555534625dc2fd85e13369dc61547b2e3f2cfc8b98cee868b449c17a4d6';
-    const dummyWallet = new Wallet(dummyPrivateKey).connect(debugProvider);
-    const loggingContract = contract.connect(dummyWallet);
-    loggingContract[action](...params, overrides);
+    // overrides.gasPrice = sender;
+    // const dummyPrivateKey = '0x651bd555534625dc2fd85e13369dc61547b2e3f2cfc8b98cee868b449c17a4d6';
+    // const dummyWallet = new Wallet(dummyPrivateKey).connect(debugProvider);
+    // const loggingContract = contract.connect(dummyWallet);
+    // loggingContract[action](...params, overrides);
 }

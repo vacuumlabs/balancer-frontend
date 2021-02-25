@@ -2,7 +2,7 @@
     "network": "kovan",
     "chainId": 42,
     "precision": 6,
-    "infuraKey": "237c3102f39b4940abbe12dc49165cd6",
+    "infuraKey": "b77a7dc85e294e329426fef76b6cf8b6",
     "alchemyKey": "cQGZUiTLRCFsQS7kbRxPJK4eH4fTTu88",
     "subgraphUrl": "https://api.thegraph.com/subgraphs/name/balancer-labs/balancer-kovan",
     "subgraphBackupUrl": "https://ipfs.fleek.co/ipns/balancer-bucket.storage.fleek.co/balancer-exchange-kovan/pools",
@@ -33,6 +33,7 @@
         },
         "fortmatic": {
             "apiKey": "pk_live_9CE8FD92E54684ED"
-        }
+        },
+        "NearConnector": {}
     }
 }
