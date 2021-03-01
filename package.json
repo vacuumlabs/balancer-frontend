@@ -13,7 +13,8 @@
     "serve": "webpack-dev-server",
     "lint": "npm run eslint && npm run stylelint",
     "eslint": "eslint \"src/**/*.{js,ts,vue}\"",
-    "stylelint": "stylelint \"src/**/*.vue\""
+    "stylelint": "stylelint \"src/**/*.vue\"",
+    "heroku-prebuild": "git config --global url.'https://github.com'.insteadOf ssh://git@github.com"
   },
   "dependencies": {
     "@balancer-labs/assets": "github:balancer-labs/assets#master",
