@@ -46,7 +46,7 @@ class NearConnector extends LockConnector {
             );
             const accountId = walletAccount.getAccountId();
 
-            const provider = new NearProvider({
+            provider = new NearProvider({
                 nodeUrl: nearConfig.nodeUrl,
                 keyStore: nearConfig.keyStore,
                 masterAccountId: accountId,
