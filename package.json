@@ -16,7 +16,7 @@
     "stylelint": "stylelint \"src/**/*.vue\""
   },
   "dependencies": {
-    "@balancer-labs/assets": "github:balancer-labs/assets#master",
+    "@balancer-labs/assets": "git+https://github.com/balancer-labs/assets#master",
     "@balancer-labs/sor": "file:balancer-labs-sor-v1.0.0.tgz",
     "@ethersproject/address": "^5.0.6",
     "@ethersproject/constants": "^5.0.6",
@@ -26,7 +26,7 @@
     "@ethersproject/wallet": "^5.0.8",
     "@metamask/jazzicon": "^2.0.0",
     "@portis/web3": "^2.0.0-beta.59",
-    "@snapshot-labs/lock": "github:snapshot-labs/lock#a3694bb6b6e615968ee6e04e9a97007eace18c28",
+    "@snapshot-labs/lock": "git+https://github.com/snapshot-labs/lock#a3694bb6b6e615968ee6e04e9a97007eace18c28",
     "@vueuse/core": "^4.0.0-beta.30",
     "@walletconnect/web3-provider": "^1.2.2",
     "bignumber.js": "^9.0.1",
