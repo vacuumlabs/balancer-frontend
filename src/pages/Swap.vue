@@ -440,7 +440,8 @@ export default defineComponent({
             const type = transactionReceipt.status === 1
                 ? 'success'
                 : 'error';
-            const link = getEtherscanLink(transactionReceipt.transactionHash);
+            // const link = getEtherscanLink(transactionReceipt.transactionHash);
+            const link = `https://explorer.betanet.near.org/transactions/${transactionReceipt.transactionHash.split(':')[0]}`;
             store.dispatch('ui/notify', {
                 text,
                 type,

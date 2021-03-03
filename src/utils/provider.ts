@@ -12,6 +12,7 @@ import { AlchemyProvider, InfuraProvider, Web3Provider } from '@ethersproject/pr
 // export { debugProvider };
 
 import { NearProvider, nearAPI } from 'near-web3-provider';
+import { EthersNEARWeb3 } from '../web3/near';
 
 
 const nearConfig = {
@@ -24,7 +25,7 @@ const nearConfig = {
 };
 
 
-const provider = new Web3Provider(new NearProvider({
+const provider = new EthersNEARWeb3(new NearProvider({
     nodeUrl: nearConfig.nodeUrl,
     keyStore: nearConfig.keyStore,
     networkId: nearConfig.networkId,

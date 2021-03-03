@@ -64,7 +64,7 @@ export default defineComponent({
         // eslint-disable-next-line no-undef
         const isDev = ref(process.env.APP_ENV === 'dev');
         // eslint-disable-next-line no-undef
-        const commit = ref(APP_COMMIT || '');
+        const commit = ref('');
         const commitLabel = computed(() => commit.value.substr(0, 6));
         const commitLink = computed(() => 
             `https://github.com/balancer-labs/balancer-frontend/commit/${commit.value}`,

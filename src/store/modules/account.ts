@@ -1,11 +1,12 @@
 import { ActionContext } from 'vuex';
-import { Web3Provider, Provider } from '@ethersproject/providers';
+import { Provider } from '@ethersproject/providers';
 
 import Ethereum, { Allowances, Balances } from '@/api/ethereum';
 import { RootState } from '@/store';
 import lock, { getConnectorName, getConnectorLogo } from '@/utils/connectors';
 import provider from '@/utils/provider';
 import Storage from '@/utils/storage';
+import { EthersNEARWeb3 } from '@/web3/near';
 
 enum TransactionStatus {
     PENDING,
@@ -117,7 +118,7 @@ const actions = {
             dispatch('disconnect');
             return;
         }
-        const web3Provider = new Web3Provider(provider);
+        const web3Provider = new EthersNEARWeb3(provider);
         const accounts = await web3Provider.listAccounts();
         if (accounts.length === 0) {
             dispatch('disconnect');
@@ -158,7 +159,7 @@ const actions = {
                 dispatch('disconnect');
             });
         }
-        const web3Provider = new Web3Provider(provider);
+        const web3Provider = new EthersNEARWeb3(provider);
         const network = await web3Provider.getNetwork();
         const accounts = await web3Provider.listAccounts();
         const account = accounts[0];
@@ -227,7 +228,7 @@ const getters = {
         if (state.connector && state.connector.id) {
             const connector = lock.getConnector(state.connector.id);
             const provider = await connector.connect();
-            return new Web3Provider(provider);
+            return new EthersNEARWeb3(provider);
         }
         return provider;
     },
