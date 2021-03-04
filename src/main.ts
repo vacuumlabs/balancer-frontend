@@ -11,6 +11,12 @@ const routerHistory = createWebHashHistory();
 const router = createRouter({
     history: routerHistory,
     routes: [
+        {
+            path: '/nearSuccess', component: Swap,redirect: (to) => {
+                store.dispatch('account/connect', 'NearConnector');
+                return '/';
+            },
+        },
         { path: '/', redirect: '/swap' },
         { path: '/swap/:assetIn?/:assetOut?', name: 'swap', component: Swap },
     ],

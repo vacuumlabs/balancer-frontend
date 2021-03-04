@@ -15,6 +15,7 @@ import statusLogo from '@/assets/connector/status.svg';
 import trustwalletLogo from '@/assets/connector/trustwallet.svg';
 import walletconnectLogo from '@/assets/connector/walletconnect.svg';
 import walletlinkLogo from '@/assets/connector/walletlink.svg';
+import nearLogo from '@/assets/connector/near.svg';
 
 import { NearConnector } from '../web3/near';
 
@@ -70,6 +71,9 @@ export function getConnectorName(connectorId: string): string {
     if (connectorId === 'walletlink') {
         return 'Coinbase Wallet';
     }
+    if (connectorId === 'NearConnector') {
+        return 'Near Wallet';
+    }
     return 'Unknown';
 }
 
@@ -104,6 +108,9 @@ export function getConnectorLogo(connectorId: string): string {
     }
     if (connectorId === 'walletlink') {
         return walletlinkLogo;
+    }
+    if (connectorId === 'NearConnector'){
+        return nearLogo;
     }
     return defaultLogo;
 }
