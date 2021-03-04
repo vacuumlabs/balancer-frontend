@@ -2,6 +2,7 @@ import { ExternalProvider, Formatter, JsonRpcFetchFunc, Networkish, Web3Provider
 import { TransactionResponse } from '@ethersproject/abstract-provider';
 import LockConnector from '@snapshot-labs/lock/src/connector';
 import { NearProvider, nearAPI } from 'near-web3-provider';
+import { WalletConnection } from 'near-api-js';
 
 
 export class NEARFormatter extends Formatter {
@@ -58,6 +59,7 @@ export class EthersNEARWeb3 extends Web3Provider {
     }
 }
 
+var walletAccount: WalletConnection;
 export class NearConnector extends LockConnector {
     async connect(): Promise<any> {
         let provider;
@@ -73,13 +75,14 @@ export class NearConnector extends LockConnector {
 
             const near = await nearAPI.connect(nearConfig);
 
-            const walletAccount = new nearAPI.WalletAccount(near, undefined);
+            walletAccount = new nearAPI.WalletAccount(near, undefined);
             let accountId = walletAccount.getAccountId();
             if (!accountId) {
+                const url = process.env.DEPLOYED_URL ||'http://localhost:8080'
                 await walletAccount.requestSignIn(
                     'evm',
                     'Balancer Exchange',
-                    undefined,
+                    url + '/#/nearSuccess',
                     undefined,
                 );
                 accountId = walletAccount.getAccountId();
@@ -102,7 +105,13 @@ export class NearConnector extends LockConnector {
         return provider;
     }
 
-    logout() {
-        return;
+    logout(): any {
+        if (!walletAccount) throw new Error("Near connection not defined on logout!")
+        walletAccount.signOut();
+    }
+
+    isLoggedIn() {
+        if(!walletAccount) throw new Error("Near connection not defined!")
+        return walletAccount.isSignedIn();
     }
 }
