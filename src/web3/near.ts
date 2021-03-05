@@ -59,39 +59,32 @@ export class EthersNEARWeb3 extends Web3Provider {
     }
 }
 
-var walletAccount: WalletConnection;
 export class NearConnector extends LockConnector {
     async connect(): Promise<any> {
         let provider;
         try {
+
             const nearConfig = {
-                nodeUrl: 'https://rpc.betanet.near.org/',
-                keyStore: new nearAPI.keyStores.BrowserLocalStorageKeyStore(),
-                networkId: 'betanet',
-                evmAccountId: 'evm',
+                nodeUrl: 'http://localhost:3030',
+                keyStore: new nearAPI.keyStores.InMemoryKeyStore(),
+                networkId: 'local',
+                evmAccountId: 'evm.test.node0',
                 walletUrl: 'https://wallet.betanet.near.org',
                 explorerUrl: 'https://explorer.betanet.near.org',
             };
 
-            const near = await nearAPI.connect(nearConfig);
-
-            walletAccount = new nearAPI.WalletAccount(near, undefined);
-            let accountId = walletAccount.getAccountId();
-            if (!accountId) {
-                const url = process.env.DEPLOYED_URL ||'http://localhost:8080'
-                await walletAccount.requestSignIn(
-                    'evm',
-                    'Balancer Exchange',
-                    url + '/#/nearSuccess',
-                    undefined,
-                );
-                accountId = walletAccount.getAccountId();
-            }
+            nearConfig.keyStore.setKey(
+                nearConfig.networkId,
+                'test.node0',
+                nearAPI.KeyPair.fromString(
+                    'ed25519:4AP5J91naiA2f6BXQhF24ycNqeemEjVmsPm1qNs8GzL5aWCUUAGU43yTZ95uwpFc5tRTrmNLgdFxKRxw8Fpbb9ec',
+                ),
+            );
 
             provider = new NearProvider({
                 nodeUrl: nearConfig.nodeUrl,
                 keyStore: nearConfig.keyStore,
-                masterAccountId: accountId,
+                masterAccountId: 'test.node0',
                 networkId: nearConfig.networkId,
                 evmAccountId: nearConfig.evmAccountId,
                 walletUrl: nearConfig.walletUrl,
@@ -103,15 +96,5 @@ export class NearConnector extends LockConnector {
             return;
         }
         return provider;
-    }
-
-    logout(): any {
-        if (!walletAccount) throw new Error("Near connection not defined on logout!")
-        walletAccount.signOut();
-    }
-
-    isLoggedIn() {
-        if(!walletAccount) throw new Error("Near connection not defined!")
-        return walletAccount.isSignedIn();
     }
 }

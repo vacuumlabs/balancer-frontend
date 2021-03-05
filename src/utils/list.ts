@@ -63,19 +63,19 @@ export function getAssetsFromTokenlist(chainId: number, list: TokenList): Record
             logoURI: token.logoURI,
         };
     }
-    assets['0xe599045a0a93ff901b995c755f1599db6acd44e6'] = {
-        address: '0xe599045a0a93ff901b995c755f1599db6acd44e6',
-        name: 'GKC1',
-        symbol: 'GKC1',
+    assets['0x00546B70b619a35c5A69fea3eC676A4894e828b4'] = {
+        address: '0x00546B70b619a35c5A69fea3eC676A4894e828b4',
+        name: 'Vacuumlabs Test Token 1',
+        symbol: 'VLTT1',
         decimals: 18,
         logoURI: ETH_LOGO,
-    }
-    assets['0xc1dd4f43e799a08ec72b455c723c7fe0e9e85a70'] = {
-        address: '0xc1dd4f43e799a08ec72b455c723c7fe0e9e85a70',
-        name: 'GKC2',
-        symbol: 'GKC2',
+    };
+    assets['0x3655aFf15d8aEd0e28915f5Bf6866a95f9084cd8'] = {
+        address: '0x3655aFf15d8aEd0e28915f5Bf6866a95f9084cd8',
+        name: 'Vacuumlabs Test Token 2',
+        symbol: 'VLTT2',
         decimals: 18,
         logoURI: ETH_LOGO,
-    }
+    };
     return assets;
 }

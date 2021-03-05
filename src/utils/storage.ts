@@ -170,6 +170,10 @@ function getPreferences(): Preferences {
                 inputAsset: '0xe599045a0a93ff901b995c755f1599db6acd44e6',
                 outputAsset: '0xc1dd4f43e799a08ec72b455c723c7fe0e9e85a70',
             },
+            1313161555: {
+                inputAsset: '0x00546B70b619a35c5A69fea3eC676A4894e828b4',
+                outputAsset: '0x3655aFf15d8aEd0e28915f5Bf6866a95f9084cd8',
+            },
         },
         list: 'balancer',
         darkmode: true,

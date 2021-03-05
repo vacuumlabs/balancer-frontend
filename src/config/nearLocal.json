@@ -1,0 +1,16 @@
+{
+    "network": "localnet",
+    "chainId": 1313161555,
+    "precision": 6,
+    "addresses": {
+        "bFactory": "0x54A20A8Cfa508B23881E7893864F1FE68a9Abcf6",
+        "bActions": "0x6c830d06FBb2b8c52e5AE65b9b341d39fbf1A016",
+        "dsProxyRegistry": "0x7D580c5B4e139Fe5DC3635533e9e05FE1287b017",
+        "exchangeProxy": "0x62508BEd02c1112B120d70582631985d5d888000",
+        "weth": "0xd0A1E359811322d97991E03f863a0C30C2cF029C",
+        "multicall": "0xEDD4d65E70eAe4701454aAF576C58dD4a9E2d3CF"
+    },
+    "connectors": {
+        "NearConnector": {}
+    }
+}
