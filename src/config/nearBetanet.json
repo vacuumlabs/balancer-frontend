@@ -8,7 +8,7 @@
         "dsProxyRegistry": "0x053A91D4210bb775507014308cdE6fdCa19Dfc2B",
         "exchangeProxy": "0xdB9217dF5c41887593e463CFA20036B62a4E331C",
         "weth": "0xd0A1E359811322d97991E03f863a0C30C2cF029C",
-        "multicall": "0x3634DEFD99bfe246CF6a89Ba68265D2800C6d801"
+        "multicall": "0x760686d42fAf5F4a202f661EB430f542814F5B28"
     },
     "connectors": {
         "NearConnector": {}

@@ -22,7 +22,7 @@ export default class Ethereum {
         assets = assets.filter(asset => asset !== ETH_KEY);
         const ethcallProvider = new Provider();
         await ethcallProvider.init(provider);
-        ethcallProvider.multicallAddress = '0x760686d42fAf5F4a202f661EB430f542814F5B28';
+        ethcallProvider.multicallAddress = config.addresses.multicall;
 
         const calls = [];
         // Fetch balances and allowances
@@ -65,7 +65,7 @@ export default class Ethereum {
     static async fetchAssetMetadata(assets: string[]): Promise<Record<string, AssetMetadata>> {
         const ethcallProvider = new Provider();
         await ethcallProvider.init(provider);
-        ethcallProvider.multicallAddress = '0x760686d42fAf5F4a202f661EB430f542814F5B28';
+        ethcallProvider.multicallAddress = config.addresses.multicall;
 
         const calls = [];
         // Fetch asset metadata
